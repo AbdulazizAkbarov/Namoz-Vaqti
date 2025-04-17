@@ -16,6 +16,8 @@ import Banner from "./Components/Banner";
 
 import check from "./assets/check.png";
 import checked from "./assets/checked.png";
+import YandexMap from "./Components/YandexMap";
+import KunlikDuolar from "./Components/KunlikDuolar";
 
 // import tahajjud from "./assets/tahajjud.png";
 
@@ -156,7 +158,7 @@ function App() {
 
         <Banner />
 
-        <div className="bg-[#faf7f7] mx-2 h-auto rounded p-2">
+        <div className="bg-[#faf7f7] mx-2 h-auto rounded-lg  p-2">
           <h2 className="font-bold text-xl pl-3">Prayer Tracker</h2>
 
        <div className="bg-white  rounded-xl p-1 my-1">
@@ -203,8 +205,9 @@ function App() {
 
 
 
-
         </div>
+       <KunlikDuolar/>
+
       </div>
     </div>
   );
