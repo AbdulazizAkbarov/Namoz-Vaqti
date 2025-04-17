@@ -156,10 +156,10 @@ function App() {
 
         <Banner />
 
-        <div className="bg-[#faf7f7] px-2 h-auto rounded p-2">
+        <div className="bg-[#faf7f7] mx-2 h-auto rounded p-2">
           <h2 className="font-bold text-xl pl-3">Prayer Tracker</h2>
 
-       <div className="bg-white  rounded p-1">
+       <div className="bg-white  rounded-xl p-1 my-1">
        <div className="grid grid-cols-5 mt-2">
 
 <div className="flex flex-col items-center">
