@@ -16,7 +16,6 @@ import Banner from "./Components/Banner";
 
 import check from "./assets/check.png";
 import checked from "./assets/checked.png";
-import YandexMap from "./Components/YandexMap";
 import KunlikDuolar from "./Components/KunlikDuolar";
 
 // import tahajjud from "./assets/tahajjud.png";
