@@ -1,10 +1,10 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
 import fajr from "../assets/fajr.png";
 import duhr from "../assets/duhr.png";
 import asr from "../assets/asr.png";
 import isya from "../assets/isya.png";
 import magrib from "../assets/magrib.png";
+import { useEffect, useState } from 'react';
 type Time ={
   
     region: string,
