@@ -1,55 +1,53 @@
 import "./App.css";
 
-
 import Banner from "./Components/Banner";
 
-import check from "./assets/check.png";
-import checked from "./assets/checked.png";
 import KunlikDuolar from "./Components/KunlikDuolar";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import NamozVaqtlari from "./Components/NamozVaqtlari";
 import Funksiyalar from "./Components/Funksiyalar";
 
-type Time ={
-  
-  region: string,
-  date: Date,
-  weekday: string,
+type Time = {
+  region: string;
+  date: Date;
+  weekday: string;
   hijri_date: {
-    month: string,
-    day: number
-  },
+    month: string;
+    day: number;
+  };
   times: {
-    tong_saharlik: string,
-    quyosh: string,
-    peshin: string,
-    asr: string,
-    shom_iftor: string,
-    hufton: string
-  }
-}
+    tong_saharlik: string;
+    quyosh: string;
+    peshin: string;
+    asr: string;
+    shom_iftor: string;
+    hufton: string;
+  };
+};
 
 function App() {
-  const [time, setTime] = useState<Time>( );
-  const [isLoading, setIsLoading] = useState(true)
+  const [time, setTime] = useState<Time>();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get("https://islomapi.uz/api/present/day?region=Toshkent")
       .then((res) => {
         setTime(res.data);
-        setIsLoading(false)
+        setIsLoading(false);
         console.log(res.data);
-      }).catch((e) => {
-        console.log(e);
-        setIsLoading(false)
       })
+      .catch((e) => {
+        console.log(e);
+        setIsLoading(false);
+      });
   }, []);
-  const timeString = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const timeString = new Date().toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
-   
-  
   return (
     <div className="main mx-auto relative ">
       <div className="flex px-3 justify-between py-10">
@@ -70,23 +68,19 @@ function App() {
         {timeString}
       </h2>
 
-          {
-            isLoading ? <p>loading...</p> :
-            (
-              <div className="bg-white absolute top-[80%] left-0 right-0 bottom-0 h-[100vh] rounded-t-4xl">
-                
-        <NamozVaqtlari/>
-                  
-        
-              <Funksiyalar/>
-        
-                <Banner />
-        
-             
-                <KunlikDuolar />
-              </div>
-            )
-          }
+      {isLoading ? (
+        <p>loading...</p>
+      ) : (
+        <div className="bg-white absolute top-[80%] left-0 right-0 bottom-0 h-[100vh] rounded-t-4xl">
+          <NamozVaqtlari />
+
+          <Funksiyalar />
+
+          <Banner />
+
+          <KunlikDuolar />
+        </div>
+      )}
     </div>
   );
 }

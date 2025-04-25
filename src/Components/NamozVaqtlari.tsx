@@ -38,7 +38,7 @@ function NamozVaqtlari() {
     }, []);
   
   return (
-    <div className="flex px-2 justify-between pt-3 mt-3">
+    <div className="flex px-6 justify-between pt-3 mt-3">
                         
     <div className="flex flex-col items-center">
       <h2 className="font-bold">Bomdod</h2>
