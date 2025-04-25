@@ -8,3 +8,13 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+.tasbeh{
+    background-image: url("./assets/img.png");
+    max-width: 482px;
+    height: 48vh;
+    background-position: bottom;
+
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
