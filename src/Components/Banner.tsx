@@ -2,48 +2,36 @@ import { useEffect, useState } from "react";
 
 function Banner() {
   const images = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJsOznHaVMdApckt2UI3ATtr7yOegvgkLKjVVV37X0Z9qsL6dZtbfpvSiT_8u_2z19Vs0&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5hdn5GDYIw-aO6bw14Cpo8aduzYAD6fe5aQ&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJrc8hdDanWgmHN-oOsqqnYsh4z7Ca2jpxQSHjR347JUzGMeavgSc13BPrrGJaOkzL4T8&usqp=CAU",
+    "https://daryo.uz/cache/2019/06/5455734-680x454.jpg",
+    "https://img1.advisor.travel/fs440x440px-Masjid_al_Haram_20.jpg",
+    "https://i.pinimg.com/474x/38/59/7f/38597fdb438149003e4970e7e0d673fd.jpg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 3000);
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <div className="relative overflow-hidden rounded-2xl shadow-lg mx-auto w-[380px] my-4">
-      <div
-        className="flex transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {images.map((src, idx) => (
-          <img
-            key={idx}
-            src={src}
-            alt={`Slide ${idx + 1}`}
-            className="w-full flex-shrink-0"
-          />
-        ))}
-      </div>
+    <div className="relative w-[380px] h-[250px] mx-auto rounded-2xl overflow-hidden shadow-lg my-4 bg-black flex items-center justify-center">
+      <img
+        src={images[currentIndex]}
+        alt="Slide"
+        className="max-w-full max-h-full object-contain h-[250px]"
+      />
 
-      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {images.map((_, idx) => (
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
           <button
-            key={idx}
-            onClick={() => goToSlide(idx)}
+            key={index}
+            onClick={() => setCurrentIndex(index)}
             className={`w-3 h-3 rounded-full ${
-              idx === currentIndex ? "bg-white" : "bg-gray-400"
-            } transition duration-300`}
+              index === currentIndex ? "bg-white" : "bg-gray-400"
+            }`}
           />
         ))}
       </div>

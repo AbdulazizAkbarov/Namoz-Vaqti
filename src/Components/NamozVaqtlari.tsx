@@ -43,7 +43,7 @@ function NamozVaqtlari() {
     <div className="flex flex-col items-center">
       <h2 className="font-bold">Bomdod</h2>
       <img className="w-15 h-15 rounded-full" src={fajr} alt="" />
-      <h2>{time?.times.peshin}</h2>
+      <h2 className='text-[#002547]'>{time?.times.quyosh}</h2>
     </div>
 
     <div className="flex flex-col items-center">
