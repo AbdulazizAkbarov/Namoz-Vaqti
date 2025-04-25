@@ -23,7 +23,7 @@ function Tasbeh() {
             setCount(count+1)
         }}
         >
-            <img className='w-[10] h-[10]' src={touch} alt="" />
+            <img className=' object-cover w-[10] h-[10]' src={touch} alt="" />
         </div>
     </div>
   )
