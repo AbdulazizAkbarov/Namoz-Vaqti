@@ -12,16 +12,16 @@ function Banner() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="relative w-[380px] h-[250px] mx-auto rounded-2xl overflow-hidden shadow-lg my-4 bg-black flex items-center justify-center">
+    <div className="relative w-[380px] h-[220px] mx-auto rounded-2xl overflow-hidden shadow-lg my-4 bg-black flex items-center justify-center">
       <img
         src={images[currentIndex]}
         alt="Slide"
-        className="max-w-full max-h-full object-contain h-[250px]"
+        className="w-full  h-full object-center "
       />
 
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2">
