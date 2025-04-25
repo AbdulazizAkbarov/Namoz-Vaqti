@@ -1,17 +1,6 @@
 import "./App.css";
-import fajr from "./assets/fajr.png";
-import duhr from "./assets/duhr.png";
-import asr from "./assets/asr.png";
-import isya from "./assets/isya.png";
-import magrib from "./assets/magrib.png";
-import quran from "./assets/quran.png";
-import hijri from "./assets/calendar.png";
-import qibla from "./assets/qibla-compass.png";
-import tasbeh from "./assets/beads.png";
-import calendar from "./assets/calendar (1).png";
-import dua from "./assets/dua-hands.png";
-import hadith from "./assets/bismillah.png";
-import salah from "./assets/salah.png";
+
+
 import Banner from "./Components/Banner";
 
 import check from "./assets/check.png";
@@ -19,30 +8,30 @@ import checked from "./assets/checked.png";
 import KunlikDuolar from "./Components/KunlikDuolar";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import NamozVaqtlari from "./Components/NamozVaqtlari";
+import Funksiyalar from "./Components/Funksiyalar";
 
 type Time ={
   
-    region: string,
-    date: Date,
-    weekday: string,
-    hijri_date: {
-      month: string,
-      day: number
-    },
-    times: {
-      tong_saharlik: string,
-      quyosh: string,
-      peshin: string,
-      asr: string,
-      shom_iftor: string,
-      hufton: string
-    }
+  region: string,
+  date: Date,
+  weekday: string,
+  hijri_date: {
+    month: string,
+    day: number
+  },
+  times: {
+    tong_saharlik: string,
+    quyosh: string,
+    peshin: string,
+    asr: string,
+    shom_iftor: string,
+    hufton: string
   }
-
-// import tahajjud from "./assets/tahajjud.png";
+}
 
 function App() {
-  const [time, setTime] = useState<Time | null>( null);
+  const [time, setTime] = useState<Time>( );
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -68,7 +57,6 @@ function App() {
           <h2 className="font-bold text-lg">{time?.region}</h2>
           <h2 className="font-bold text-3xl">{time?.hijri_date.month}</h2>
         </div>
-
         <img
           className="rounded-full w-12 h-12"
           src={
@@ -86,117 +74,11 @@ function App() {
             isLoading ? <p>loading...</p> :
             (
               <div className="bg-white absolute top-[80%] left-0 right-0 bottom-0 h-[100vh] rounded-t-4xl">
-                  {/* {time?.map((i)=>{ */}
-                    {/* return( */}
-                      <div className="flex px-2 justify-between pt-3 mt-3">
-                      <div className="flex flex-col items-center">
-                        <h2 className="font-bold">Bomdod</h2>
-                        <img className="w-15 h-15 rounded-full" src={fajr} alt="" />
-                        <h2>{time?.times.peshin}</h2>
-                      </div>
-            
-                      <div className="flex flex-col items-center">
-                        <h2 className="font-bold">Peshin</h2>
-                        <img className="w-15 h-15 rounded-full" src={duhr} alt="" />
-                        <h2>{time?.times.peshin}</h2>
-                      </div>
-            
-                      <div className="flex flex-col items-center">
-                        <h2 className="font-bold">Asr</h2>
-                        <img className="w-15 h-15 rounded-full" src={asr} alt="" />
-                        <h2>{time?.times.asr}</h2>
-                      </div>
-            
-                      <div className="flex flex-col items-center">
-                        <h2 className="font-bold">Shom</h2>
-                        <img className="w-15 h-15 rounded-full" src={magrib} alt="" />
-                        <h2>{time?.times.shom_iftor}</h2>
-                      </div>
-            
-                      <div className="flex flex-col items-center">
-                        <h2 className="font-bold">Hufton</h2>
-                        <img className="w-15 h-15 rounded-full" src={isya} alt="" />
-                        <h2>{time?.times.hufton}</h2>
-                      </div>
-            
                 
-                    </div>
-                    {/* )
-                  })} */}
+        <NamozVaqtlari/>
+                  
         
-                <div className="px-3 grid grid-cols-4 gap-1 mt-3">
-                  <div className="flex flex-col items-center pt-2">
-                    <div className="bg-[#E9F4EE] p-3 rounded-lg inline-block">
-                      <div className="w-[32px] h-[32px]">
-                        <img className="w-[100%] h-[100%]" src={quran} alt="" />
-                      </div>
-                    </div>
-                    <h2 className="font-bold">Quran</h2>
-                  </div>
-        
-                  <div className="flex flex-col items-center pt-2">
-                    <div className="bg-[#E9F4EE] p-3 rounded-lg inline-block">
-                      <div className="w-[32px] h-[32px]">
-                        <img className="w-[100%] h-[100%]" src={hijri} alt="" />
-                      </div>
-                    </div>
-                    <h2 className="font-bold">Hijri</h2>
-                  </div>
-        
-                  <div className="flex flex-col items-center pt-2">
-                    <div className="bg-[#E9F4EE] p-3 rounded-lg inline-block">
-                      <div className="w-[32px] h-[32px]">
-                        <img className="w-[100%] h-[100%]" src={qibla} alt="" />
-                      </div>
-                    </div>
-                    <h2 className="font-bold">Qibla</h2>
-                  </div>
-        
-                  <div className="flex flex-col items-center pt-2">
-                    <div className="bg-[#E9F4EE] p-3 rounded-lg inline-block">
-                      <div className="w-[32px] h-[32px]">
-                        <img className="w-[100%] h-[100%]" src={tasbeh} alt="" />
-                      </div>
-                    </div>
-                    <h2 className="font-bold">Tasbeeh</h2>
-                  </div>
-        
-                  <div className="flex flex-col items-center pt-2">
-                    <div className="bg-[#E9F4EE] p-3 rounded-lg inline-block">
-                      <div className="w-[32px] h-[32px]">
-                        <img className="w-[100%] h-[100%]" src={calendar} alt="" />
-                      </div>
-                    </div>
-                    <h2 className="font-bold">Calendar</h2>
-                  </div>
-        
-                  <div className="flex flex-col items-center pt-2">
-                    <div className="bg-[#E9F4EE] p-3 rounded-lg inline-block">
-                      <div className="w-[32px] h-[32px]">
-                        <img className="w-[100%] h-[100%]" src={dua} alt="" />
-                      </div>
-                    </div>
-                    <h2 className="font-bold">Dua</h2>
-                  </div>
-        
-                  <div className="flex flex-col items-center pt-2">
-                    <div className="bg-[#E9F4EE] p-3 rounded-lg inline-block">
-                      <div className="w-[32px] h-[32px]">
-                        <img className="w-[100%] h-[100%]" src={hadith} alt="" />
-                      </div>
-                    </div>
-                    <h2 className="font-bold">Hadith</h2>
-                  </div>
-        
-                  <div className="flex flex-col items-center pt-2">
-                    <div className="bg-[#E9F4EE] p-3 rounded-lg inline-block">
-                      <div className="w-[32px] h-[32px]">
-                        <img className="w-[100%] h-[100%]" src={salah} alt="" />
-                      </div>
-                    </div>
-                    <h2 className="font-bold">Salah</h2>
-                  </div>
-                </div>
+              <Funksiyalar/>
         
                 <Banner />
         
@@ -209,14 +91,14 @@ function App() {
                         <div className="w-[20px] h-[20px]">
                           <img className="wpfull h-full " src={checked} alt="" />
                         </div>
-                        <p className="pt-1">Fajr</p>
+                        <p className="pt-1">Bomdod</p>
                       </div>
         
                       <div className="flex flex-col items-center">
                         <div className="w-[20px] h-[20px]">
                           <img className="wpfull h-full " src={checked} alt="" />
                         </div>
-                        <p className="pt-1">Duhur</p>
+                        <p className="pt-1">Peshin</p>
                       </div>
         
                       <div className="flex flex-col items-center">
@@ -230,14 +112,14 @@ function App() {
                         <div className="w-[20px] h-[20px]">
                           <img className="wpfull h-full " src={check} alt="" />
                         </div>
-                        <p className="pt-1">Magrib</p>
+                        <p className="pt-1">Shom</p>
                       </div>
         
                       <div className="flex flex-col items-center">
                         <div className="w-[20px] h-[20px]">
                           <img className="wpfull h-full " src={check} alt="" />
                         </div>
-                        <p className="pt-1">Isya</p>
+                        <p className="pt-1">Hufton</p>
                       </div>
                     </div>
                   </div>
