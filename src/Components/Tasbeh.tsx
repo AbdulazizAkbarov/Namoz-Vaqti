@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import touch from "../assets/touch-screen.png";
+import Refresh from "../assets/refresh";
+import Ong from "../assets/ong";
+import { Link } from "react-router";
 
 function Tasbeh() {
   const [count, setCount] = useState(0);
@@ -16,19 +19,32 @@ function Tasbeh() {
   return (
     <div className="flex flex-col items-center  space-y-6">
       <div className="w-full bg-[#002547] p-4">
+     <Link to={"/"}>
+     <Ong/>
+
+     </Link>
         <div
-          className="w-[200px] ml-38 h-[200px] rounded-full flex items-center justify-center cursor-pointer"
+          className="w-[200px] ml-38 h-[200px] rounded-full flex items-center justify-center cursor-pointer border-y border-[#002547]"
           style={{
             background: `conic-gradient(#00ffcc ${percent}%, #002547 ${percent}%)`,
             transition: "background 0.3s ease-in-out",
           }}
         >
-          <div className="w-[170px] h-[170px] rounded-full bg-[#002547] flex flex-col items-center justify-center">
+          <div className="w-[185px] h-[185px] rounded-full bg-[#002547] flex flex-col items-center justify-center">
             <p className="text-white text-5xl font-bold">{count}/33</p>
           </div>
         </div>
-        <p className="text-white text-lg mt-2 font-bold ">Jami: {total}</p>
 
+      <div className="flex justify-between">
+      <p  className="text-white text-lg mt-2 font-bold ">Jami: {total}</p>
+      <div onClick={()=>{
+        setCount(0)
+        setTotal(0)
+      }}>
+        <Refresh/>
+        
+      </div>
+      </div>
       </div>
 
       <div
