@@ -24,7 +24,7 @@ function Tasbeh() {
 
      </Link>
         <div
-          className="w-[200px] ml-38 h-[200px] rounded-full flex items-center justify-center cursor-pointer border-y border-[#002547]"
+          className="w-[200px] ml-38 h-[200px] rounded-full flex items-center justify-center cursor-pointer "
           style={{
             background: `conic-gradient(#00ffcc ${percent}%, #002547 ${percent}%)`,
             transition: "background 0.3s ease-in-out",
