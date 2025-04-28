@@ -1,14 +1,18 @@
 import {  useState } from "react";
 import data from "./data"
 import { Link } from "react-router";
+import Ong from "../assets/ong";
 
 function Quron() {
   const [quran, _] = useState(data);
 
   return (
     <div>
-      <div className="bg-[#002547] w-full h-16 text-white ">
-        <p className="text-center pt-3 font-bold text-xl">Qur'oni Karim</p>
+      <div className="bg-[#002547] w-full h-16 text-white flex items-center">
+      <Link to="/">
+          <Ong />
+        </Link>
+        <p className="text-center ml-[100px] font-bold text-xl">Qur'oni Karim</p>
       </div>
       <div>
         {quran.map((val: any) => {

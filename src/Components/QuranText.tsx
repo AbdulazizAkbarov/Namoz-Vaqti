@@ -17,12 +17,12 @@ function QuranText() {
         <Link to="/quron">
           <Ong />
         </Link>
-        <p className="text-center flex-1 font-bold">{ayat.englishName}</p>
+        <p className="text-center ml-30 font-bold">{ayat.englishName}</p>
       </div>
 
       {ayat.ayahs.map((val: any, index) => (
         <div>
-            <div className="p-3 text-right bg-[#d3d3d369] flex justify-between gap-3 items-center" key={val.number}>
+            <div className="p-3 text-right  flex justify-between gap-3 items-center" key={val.number}>
             <div>{index + 1}</div>
           <p className="mt-2">{val.text}</p>
         </div>
