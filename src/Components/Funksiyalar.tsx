@@ -12,11 +12,17 @@ function Funksiyalar() {
     
     <div className="px-3 grid grid-cols-4 gap-1 mt-3">
     <div className="flex flex-col items-center pt-2">
-      <div className="border-1 border-[#002547] p-3 rounded-lg inline-block">
+     
+     <Link to={"/quron"}>
+     <div className="border-1 border-[#002547] p-3 rounded-lg inline-block">
         <div className="w-[32px] h-[32px]">
           <img className="w-[100%] h-[100%]" src={quran} alt="" />
         </div>
       </div>
+      </Link>
+
+     
+    
       <h2 className="font-bold">Quran</h2>
     </div>
 
