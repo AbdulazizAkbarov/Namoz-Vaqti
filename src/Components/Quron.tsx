@@ -26,7 +26,7 @@ function Quron() {
 
                     <p>{val.name}</p>
                   </div>
-                  <div className="w-full h-[1px] px-3 bg-[lightgrey] mt-3"></div>
+                  <div className="w-full h-[1px] px-3 bg-[lightgrey]"></div>
                 </div>
               </Link>
           );
