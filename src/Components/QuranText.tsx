@@ -27,7 +27,7 @@ function QuranText() {
           <p className="mt-2">{val.text}</p>
         </div>
 
-        <div className="w-full h-[1px] bg-[lightgrey] my-2"></div>
+        <div className="w-full h-[1px] bg-[lightgrey] "></div>
         
         </div>
       ))}
