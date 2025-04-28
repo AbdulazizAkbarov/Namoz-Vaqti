@@ -24,7 +24,7 @@ function QuranText() {
         <div>
             <div className="p-3 text-right  flex justify-between gap-3 items-center" key={val.number}>
             <div>{index + 1}</div>
-          <p className="mt-2">{val.text}</p>
+          <p className="mt-2 text-xl">{val.text}</p>
         </div>
 
         <div className="w-full h-[1px] bg-[lightgrey] "></div>
