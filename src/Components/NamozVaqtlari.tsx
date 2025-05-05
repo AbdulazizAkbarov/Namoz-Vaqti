@@ -30,7 +30,7 @@ function NamozVaqtlari() {
   
     useEffect(() => {
       axios
-        .get("https://islomapi.uz/api/present/day?region=Toshkent")
+        .get("https://islomapi.uz/api/present/day?region=Farg%27ona")
         .then((res) => {
           setTime(res.data);
           console.log(res.data);
